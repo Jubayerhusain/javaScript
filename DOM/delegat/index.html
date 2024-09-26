@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delegat events</title>
+</head>
+<body>
+    <section>
+        <ul id="parent-Of-Items">
+            <li class="item">item no 01</li>
+            <li class="item">item no 02</li>
+            <li class="item">item no 03</li>
+            <li class="item">item no 04</li>
+            <li class="item">item no 05</li>
+        </ul>
+    </section>
+    <button id="add-btn">Add New Item</button>
+
+    <script>
+        // hou to remove a child from list item  with using a target event 
+        // const items  = document.getElementsByClassName('item');
+        // for (const item of items) {
+        //     item.addEventListener('click', function (event) {
+        //         // console.log(event.target.parentNode)
+        //         event.target.parentNode.removeChild(event.target)
+        //     })
+        // }
+
+        document.getElementById('parent-Of-Items').addEventListener('click', function (event) {
+            event.target.parentNode.removeChild(event.target)
+        })
+
+        document.getElementById('add-btn').addEventListener('click', function () {
+            const listContainer = document.getElementById('parent-Of-Items');
+            // console.log(parent)
+            
+            const li = document.createElement('li');
+            li.innerText = 'this is a new item';
+            li.classList.add('item')
+            listContainer.appendChild(li);
+        })
+    </script>
+</body>
+</html>

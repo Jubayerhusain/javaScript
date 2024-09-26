@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubble event</title>
+</head>
+<body>
+    <h1>Dubbler events hundller</h1>
+    <section id="all-name">
+        <ul id="un-oderList">
+            <li>1st name: Rifat</li>
+            <li id="2nd-name">2nd name: Sifat</li>
+            <li>3rd name: Saiful</li>
+            <li id="4th-name">4th name: Riaz</li>
+            <li>5th name: Rafsan</li>
+        </ul>
+    </section>
+
+    <script src="./dubble.js"></script>
+    <script>
+        document.getElementById('2nd-name').addEventListener('click', function (events) {
+            console.log('this is a 2nd event name sifat')
+            // events.stopPropagation();
+            events.stopImmediatePropagation()
+        })
+        document.getElementById('2nd-name').addEventListener('click', function (events) {
+            console.log('this is a 2nd event name sifat')
+            // events.stopPropagation();
+        })
+        document.getElementById('2nd-name').addEventListener('click', function (events) {
+            console.log('this is a 2nd event name sifat')
+            // events.stopPropagation();
+        })
+        document.getElementById('2nd-name').addEventListener('click', function (events) {
+            console.log('this is a 2nd event name sifat')
+            // events.stopPropagation();
+        })
+
+        document.getElementById('un-oderList').addEventListener('click', function () {
+            console.log('this is a all child list of parent name is unOrderlist ')
+        })
+
+        document.getElementById('all-name').addEventListener('click', function () {
+            console.log("this is grandParent the name All-name")
+        })
+    </script>
+</body>
+</html>
